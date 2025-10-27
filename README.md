@@ -61,7 +61,33 @@ A modern full-stack application with React frontend and Express backend that dem
 - `POST /api/users` - Create new user
 - `DELETE /api/users/:id` - Delete user
 
-## Production Deployment
+## 🚀 Production Deployment on AWS Lightsail
 
-1. Build the frontend: `npm run build`
-2. Start the production server: `npm start`
+### Quick Start (Recommended)
+```bash
+# One-click deployment to AWS Lightsail
+./one-click-deploy.sh
+```
+
+### Manual Deployment Steps
+1. **Create Lightsail Instance**: Ubuntu 22.04 LTS, $10/month plan
+2. **Set up server**: `./scripts/server-setup.sh`
+3. **Deploy app**: `./scripts/deploy.sh YOUR_SERVER_IP`
+4. **Set up SSL**: `./scripts/ssl-setup.sh yourdomain.com` (optional)
+
+### Documentation
+- 📖 **Complete Guide**: [DEPLOYMENT.md](./DEPLOYMENT.md)
+- ✅ **Quick Checklist**: [DEPLOYMENT-CHECKLIST.md](./DEPLOYMENT-CHECKLIST.md)
+
+### Production Features
+- 🐳 **Dockerized**: All services run in containers
+- 🔒 **SSL Ready**: Automatic HTTPS with Let's Encrypt
+- 🌐 **Nginx Proxy**: Optimized static file serving
+- 📊 **Health Checks**: Automated service monitoring
+- 🔄 **Auto-restart**: Services restart on failure
+- 📈 **Scalable**: Easy to upgrade server resources
+
+### Cost: ~$10-15/month
+- Lightsail: $10/month (2GB RAM recommended)
+- Domain: $12/year (optional)
+- SSL Certificate: Free (Let's Encrypt)

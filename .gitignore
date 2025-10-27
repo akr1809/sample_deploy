@@ -36,3 +36,14 @@ logs/
 # Temporary files
 tmp/
 temp/
+
+# Production secrets
+.env.production
+docker-compose-ssl.yml
+
+# SSH keys
+*.pem
+*.key
+
+# Deployment archives
+*.tar.gz
