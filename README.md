@@ -100,3 +100,19 @@ curl -fsSL https://raw.githubusercontent.com/akr1809/sample_deploy/add-users-app
 - Lightsail: $10/month (2GB RAM recommended)
 - Domain: $12/year (optional)
 - SSL Certificate: Free (Let's Encrypt)
+
+
+The Root Cause
+The issue was:
+
+npm ci --only=production excludes devDependencies
+react-scripts is a devDependency (needed for npm run build)
+Without react-scripts, the build fails
+The fix:
+
+Use npm ci (without --only=production) in the build stage
+This installs ALL dependencies including react-scripts
+Then npm run build works properly
+Try the first fix and you should see the React build complete successfully! The static files will then be properly copied to nginx and your app will work at http://13.204.124.72 🎉
+
+Let me know what the build logs show now!
