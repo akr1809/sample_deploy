@@ -76,6 +76,7 @@ cp mongo-init.js $APP_DIR/
 cp .env.production $APP_DIR/.env
 cp scripts/server-setup.sh $APP_DIR/
 cp scripts/ssl-setup.sh $APP_DIR/
+cp scripts/mongo-manage.sh $APP_DIR/
 
 # Remove development files
 rm -rf $APP_DIR/backend/node_modules

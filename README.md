@@ -63,16 +63,25 @@ A modern full-stack application with React frontend and Express backend that dem
 
 ## 🚀 Production Deployment on AWS Lightsail
 
-### Quick Start (Recommended)
+### Quick Start (Recommended) - Server-Side Deployment
 ```bash
-# One-click deployment to AWS Lightsail
+# 1. SSH into your Lightsail server
+ssh ubuntu@YOUR_LIGHTSAIL_IP
+
+# 2. Run one-liner deployment
+curl -fsSL https://raw.githubusercontent.com/akr1809/sample_deploy/add-users-app/scripts/quick-deploy.sh | bash
+```
+
+### Alternative: Local to Remote Deployment
+```bash
+# Deploy from your local machine (requires SSH setup)
 ./one-click-deploy.sh
 ```
 
 ### Manual Deployment Steps
 1. **Create Lightsail Instance**: Ubuntu 22.04 LTS, $10/month plan
-2. **Set up server**: `./scripts/server-setup.sh`
-3. **Deploy app**: `./scripts/deploy.sh YOUR_SERVER_IP`
+2. **SSH to server**: `ssh ubuntu@YOUR_SERVER_IP`
+3. **Run server deployment**: `./scripts/server-deploy.sh`
 4. **Set up SSL**: `./scripts/ssl-setup.sh yourdomain.com` (optional)
 
 ### Documentation
